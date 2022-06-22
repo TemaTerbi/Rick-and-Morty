@@ -11,6 +11,11 @@
 		5B3DA473286342E0006AB3A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA472286342E0006AB3A5 /* ContentView.swift */; };
 		5B3DA475286342E2006AB3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DA474286342E2006AB3A5 /* Assets.xcassets */; };
 		5B3DA478286342E2006AB3A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DA477286342E2006AB3A5 /* Preview Assets.xcassets */; };
+		5B3DA4802863AB83006AB3A5 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA47F2863AB83006AB3A5 /* UploadImage.swift */; };
+		5B3DA4832863ABD0006AB3A5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA4822863ABD0006AB3A5 /* Character.swift */; };
+		5B3DA4852863ABF9006AB3A5 /* ApiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA4842863ABF9006AB3A5 /* ApiInfo.swift */; };
+		5B3DA4872863AC0B006AB3A5 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA4862863AC0B006AB3A5 /* ApiResult.swift */; };
+		5B3DA48A2863AC4F006AB3A5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA4892863AC4F006AB3A5 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		5B3DA472286342E0006AB3A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B3DA474286342E2006AB3A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B3DA477286342E2006AB3A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B3DA47F2863AB83006AB3A5 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		5B3DA4822863ABD0006AB3A5 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		5B3DA4842863ABF9006AB3A5 /* ApiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInfo.swift; sourceTree = "<group>"; };
+		5B3DA4862863AC0B006AB3A5 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		5B3DA4892863AC4F006AB3A5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,9 @@
 		5B3DA46F286342E0006AB3A5 /* RIck-and-Morty */ = {
 			isa = PBXGroup;
 			children = (
+				5B3DA4882863AC30006AB3A5 /* ViewModel */,
+				5B3DA4812863ABC1006AB3A5 /* Models */,
+				5B3DA47E2863AB52006AB3A5 /* Services */,
 				5B3DA470286342E0006AB3A5 /* RIck_and_MortyApp.swift */,
 				5B3DA472286342E0006AB3A5 /* ContentView.swift */,
 				5B3DA474286342E2006AB3A5 /* Assets.xcassets */,
@@ -65,6 +78,32 @@
 				5B3DA477286342E2006AB3A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B3DA47E2863AB52006AB3A5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DA47F2863AB83006AB3A5 /* UploadImage.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5B3DA4812863ABC1006AB3A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DA4822863ABD0006AB3A5 /* Character.swift */,
+				5B3DA4842863ABF9006AB3A5 /* ApiInfo.swift */,
+				5B3DA4862863AC0B006AB3A5 /* ApiResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B3DA4882863AC30006AB3A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DA4892863AC4F006AB3A5 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3DA473286342E0006AB3A5 /* ContentView.swift in Sources */,
+				5B3DA4802863AB83006AB3A5 /* UploadImage.swift in Sources */,
+				5B3DA4852863ABF9006AB3A5 /* ApiInfo.swift in Sources */,
+				5B3DA4872863AC0B006AB3A5 /* ApiResult.swift in Sources */,
 				5B3DA471286342E0006AB3A5 /* RIck_and_MortyApp.swift in Sources */,
+				5B3DA4832863ABD0006AB3A5 /* Character.swift in Sources */,
+				5B3DA48A2863AC4F006AB3A5 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

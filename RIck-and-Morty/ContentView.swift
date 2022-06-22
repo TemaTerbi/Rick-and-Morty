@@ -7,88 +7,10 @@
 
 import SwiftUI
 
-struct URLImage: View {
-    let urlString: String
-    
-    @State var data: Data?
-    
-    var body: some View {
-        if let data = data, let uiimage = UIImage(data: data ) {
-            Image(uiImage: uiimage)
-                .resizable()
-                .scaledToFit()
-        } else {
-            Image(systemName: "rectangle.slash.fill")
-                .resizable()
-                .scaledToFit()
-                .onAppear {
-                    fetchData()
-                }
-        }
-    }
-    
-    private func fetchData() {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) {data, response, error in
-            self.data = data
-        }
-        task.resume()
-    }
-}
-
-struct ApiResult: Hashable, Codable{
-    let results: [Character]
-    let info: ApiInfo
-}
-
-struct ApiInfo: Hashable, Codable{
-    let pages: Int
-}
-
-struct Character: Hashable, Codable {
-    let id: Int
-    let name: String
-    let status: String
-    let species: String
-}
-
-class ViewModel: ObservableObject {
-    @Published var character: [Character] = []
-    
-    func fetch(page: Int = 1) {
-        guard let url = URL(string:"https://rickandmortyapi.com/api/character?page=\(page)") else {
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) {[weak self] data, response, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            do {
-                let apiResult = try JSONDecoder().decode(ApiResult.self, from: data)
-                DispatchQueue.main.async {
-                    self?.character.append(contentsOf: apiResult.results)
-                }
-                
-                if apiResult.info.pages > page {
-                    self?.fetch(page: page + 1)
-                }
-            }
-            catch {
-                print(error)
-            }
-            
-        }
-        task.resume()
-    }
-}
-
 struct ContentView: View {
     
     @StateObject var viewModel = ViewModel()
+    
     private var gridLayout = [GridItem(.flexible(), spacing: 0),GridItem(.flexible())]
     
     var body: some View {
