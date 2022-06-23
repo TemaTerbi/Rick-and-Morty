@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  RIck-and-Morty
 //
-//  Created by deniss den on 22.06.2022.
+//  Created by Artem Solovev on 22.06.2022.
 //
 
 import SwiftUI
@@ -10,43 +10,26 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var viewModel = ViewModel()
+    @State var selection: Int? = nil
     
-    private var gridLayout = [GridItem(.flexible(), spacing: 0),GridItem(.flexible())]
+    private var gridLayout = [GridItem(.flexible(), spacing: 5),GridItem(.flexible())]
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridLayout) {
                     ForEach((viewModel.character), id: \.self) { character in
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.white)
-                            VStack(alignment: .leading) {
-                                URLImage(urlString: "https://rickandmortyapi.com/api/character/avatar/\(character.id).jpeg")
-                                VStack(alignment: .leading) {
-                                    HStack {
-                                        Image(systemName: "circlebadge.fill")
-                                            .foregroundColor(character.status == "Alive" ? .green :                            character.status == "unknown" ? .yellow : .red)
-                                        Text(character.status)
-                                    }
-                                    Text(character.name)
-                                        .lineLimit(1)
-                                }
-                                .padding(10)
-                            }
-                            .padding(.bottom, 10)
+                        NavigationLink(destination: DetailScreen(character: character)) {
+                            CardView(character: character)
                         }
-                        .cornerRadius(10)
-                        .shadow(radius: 3)
-                        .padding(5)
                     }
                 }
+                .navigationTitle("Characters")
                 .padding(10)
             }
-            .navigationTitle("Characters")
-        }
-        .onAppear {
-            viewModel.fetch()
+            .onAppear {
+                viewModel.fetch()
+            }
         }
     }
 }
@@ -61,6 +44,7 @@ extension View {
     public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat) -> some View where S : ShapeStyle {
         let roundedRect = RoundedRectangle(cornerRadius: cornerRadius)
         return clipShape(roundedRect)
-             .overlay(roundedRect.strokeBorder(content, lineWidth: width))
+            .overlay(roundedRect.strokeBorder(content, lineWidth: width))
     }
 }
+
