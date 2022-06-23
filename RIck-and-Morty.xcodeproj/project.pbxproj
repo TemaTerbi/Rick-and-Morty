@@ -19,6 +19,7 @@
 		5B3DA48C286456E8006AB3A5 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA48B286456E8006AB3A5 /* DetailScreen.swift */; };
 		5B3DA48F286463C2006AB3A5 /* CharacterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA48E286463C2006AB3A5 /* CharacterCard.swift */; };
 		5B3DA49128646552006AB3A5 /* UrlItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA49028646552006AB3A5 /* UrlItem.swift */; };
+		5B3DA4972864DFB5006AB3A5 /* HeaderInfoDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA4962864DFB5006AB3A5 /* HeaderInfoDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5B3DA48B286456E8006AB3A5 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		5B3DA48E286463C2006AB3A5 /* CharacterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCard.swift; sourceTree = "<group>"; };
 		5B3DA49028646552006AB3A5 /* UrlItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlItem.swift; sourceTree = "<group>"; };
+		5B3DA4962864DFB5006AB3A5 /* HeaderInfoDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInfoDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				5B3DA48B286456E8006AB3A5 /* DetailScreen.swift */,
 				5B3DA48E286463C2006AB3A5 /* CharacterCard.swift */,
+				5B3DA4962864DFB5006AB3A5 /* HeaderInfoDetailScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3DA4972864DFB5006AB3A5 /* HeaderInfoDetailScreen.swift in Sources */,
 				5B3DA48F286463C2006AB3A5 /* CharacterCard.swift in Sources */,
 				5B3DA473286342E0006AB3A5 /* ContentView.swift in Sources */,
 				5B3DA4802863AB83006AB3A5 /* UploadImage.swift in Sources */,
