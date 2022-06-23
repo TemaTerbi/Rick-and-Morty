@@ -11,39 +11,55 @@ struct DetailScreen: View {
     let character: Character
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Form {
-                    Section(header: HeaderDetailInfo(character: character).foregroundColor(.black)) {
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    Section {
-                        Text("Test")
-                    }
+        Form {
+            Section(header: HeaderDetailInfo(character: character).foregroundColor(.primary)) {
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            Section(header: Text("Info")) {
+                VStack(alignment: .leading) {
+                    Text("Gender")
+                        .fontWeight(.bold)
+                        .font(.system(size: 15))
+                    Text(character.gender)
+                        .foregroundColor(.secondary)
+                }
+                VStack(alignment: .leading) {
+                    Text("Origin")
+                        .fontWeight(.bold)
+                        .font(.system(size: 15))
+                    Text(character.origin.name)
+                        .foregroundColor(.secondary)
+                }
+                VStack(alignment: .leading) {
+                    Text("Location")
+                        .fontWeight(.bold)
+                        .font(.system(size: 15))
+                    Text(character.location.name)
+                        .foregroundColor(.secondary)
                 }
             }
         }
         .navigationTitle(character.name)
         .navigationBarTitleDisplayMode(.inline)
     }
-}
-
-
-struct HeaderDetailInfo: View {
-    let character: Character
     
-    var body: some View {
-        VStack {
-            URLImage(urlString: "https://rickandmortyapi.com/api/character/avatar/\(character.id).jpeg")
-                .clipShape(Circle())
-                .frame(width: 200, height: 200)
-            Text(character.status)
-                .foregroundColor(.secondary)
-            Text(character.name)
-                .fontWeight(.bold)
-                .font(.system(size: 35))
-            Text(character.species)
-                .foregroundColor(.secondary)
+    
+    struct HeaderDetailInfo: View {
+        let character: Character
+        
+        var body: some View {
+            VStack {
+                URLImage(urlString: "https://rickandmortyapi.com/api/character/avatar/\(character.id).jpeg")
+                    .clipShape(Circle())
+                    .frame(width: 200, height: 200)
+                Text(character.status)
+                    .foregroundColor(.secondary)
+                Text(character.name)
+                    .fontWeight(.bold)
+                    .font(.system(size: 35))
+                Text(character.species)
+                    .foregroundColor(.secondary)
+            }
         }
     }
 }

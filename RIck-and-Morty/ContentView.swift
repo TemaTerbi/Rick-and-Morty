@@ -11,6 +11,15 @@ struct ContentView: View {
     
     @StateObject var viewModel = ViewModel()
     @State var selection: Int? = nil
+    @State private var searchText = ""
+    
+    var searchResults: [Character] {
+            if searchText.isEmpty {
+                return viewModel.character
+            } else {
+                return viewModel.character.filter{ $0.name.contains(searchText) }
+            }
+        }
     
     private var gridLayout = [GridItem(.flexible(), spacing: 5),GridItem(.flexible())]
     
@@ -18,13 +27,14 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridLayout) {
-                    ForEach((viewModel.character), id: \.self) { character in
+                    ForEach((searchResults), id: \.self) { character in
                         NavigationLink(destination: DetailScreen(character: character)) {
                             CardView(character: character)
                         }
                     }
                 }
                 .navigationTitle("Characters")
+                .searchable(text: $searchText)
                 .padding(10)
             }
             .onAppear {

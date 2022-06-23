@@ -23,13 +23,17 @@ struct CardView: View {
                         Image(systemName: "circlebadge.fill")
                             .foregroundColor(character.status == "Alive" ? .green :
                                              character.status == "unknown" ? .yellow : .red)
-                        Text(character.status)
-                            .foregroundColor(.primary)
-                            .fontWeight(.medium)
+                        HStack {
+                            Text(character.status + " -")
+                            Text(character.species)
+                        }
+                        .foregroundColor(.secondary)
+                        .font(.system(size: 10))
                     }
                     Text(character.name)
-                        .lineLimit(1)
                         .foregroundColor(.primary)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
                 }
                 .padding(10)
             }
