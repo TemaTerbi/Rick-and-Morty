@@ -24,7 +24,7 @@ struct CardView: View {
                             .foregroundColor(character.status == "Alive" ? .green :
                                              character.status == "unknown" ? .yellow : .red)
                         HStack {
-                            Text(character.status + " -")
+                            Text(character.status + "  -")
                             Text(character.species)
                         }
                         .foregroundColor(.secondary)
@@ -40,7 +40,7 @@ struct CardView: View {
             .padding(.bottom, 10)
         }
         .cornerRadius(10)
-        .shadow(color: .secondary, radius: 3)
+        .shadow(color: .secondary, radius: 5)
         .padding(5)
     }
 }
