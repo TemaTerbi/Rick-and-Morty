@@ -3,7 +3,7 @@
 My second pet project. This time I decided to practice creating applications on SwiftUI
 
 ⚙️ The app has the following features:
-- All characters into Rick and Morty
+- All characters from Rick and Morty
 - Detail info about each other
 - Search for characters
 - Support black and white theme
